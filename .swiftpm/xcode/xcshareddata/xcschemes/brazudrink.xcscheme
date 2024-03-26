@@ -56,11 +56,11 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "--help"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "sextou"
-            isEnabled = "NO">
+            argument = "happyhour"
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "--sextou"

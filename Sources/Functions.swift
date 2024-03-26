@@ -122,6 +122,7 @@ func drinkPrint() {
 }
 //Mudar cor no terminal
 func printColoredText(text: String, color: String) {
+    
     let colors = [
         "reset": "\u{001B}[0m",
         "black": "\u{001B}[30m",
@@ -141,7 +142,7 @@ func printColoredText(text: String, color: String) {
     }
 }
 //Função LOADING
-func Loading() {
+func loading() {
     printColoredText(text: """
     ,M' dP `7MMF'  `7MMF'                                     `7MMF'  `7MMF'
     dP .M'   MM      MM                                         MM      MM
@@ -155,7 +156,9 @@ mmdMmmMmmm   MM      MM   ,pm9MM   MM    M8  MM    M8   VA ,V   MM      MM 8M   
 
 
                 
+Its HAPPY HOUR and its time for to get a
+
 """
-                     , color: "white")
+                     , color: "yellow")
     
 }

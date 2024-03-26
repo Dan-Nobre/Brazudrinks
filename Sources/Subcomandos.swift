@@ -10,8 +10,11 @@ import ArgumentParser
 struct HappyHourSubCommand: ParsableCommand {
     static var configuration  = CommandConfiguration(
         commandName: "happyhour",
-        abstract: "",
-        discussion: ""
+        abstract: "Select a random drink",
+        discussion: """
+        Find the perfect drink for your #HappyHour! This subcommand allows you to get a random drink
+        from our data with all the informantion you need to have a tasty experience 🍻
+        """
     )
     
     func run() throws {
@@ -24,11 +27,18 @@ struct HappyHourSubCommand: ParsableCommand {
         let drinks: [Drink] = (try? Persistence.readJson(file: "drinks.json")) ?? []
         // Selecionando um item aleatório
         if let itemAleatorio = drinks.randomElement() {
+            loading()
+      
+            printColoredText(text: itemAleatorio.nome, color: "green")
+            
             print(
             """
-            Its HAPPY HOUR and its time for to get a \(itemAleatorio.nome)
 
             \(itemAleatorio.descricao)
+            
+            \(itemAleatorio.comida)
+            
+            \(itemAleatorio.receita)
             """
             )
         }
@@ -38,9 +48,12 @@ struct HappyHourSubCommand: ParsableCommand {
 struct SelecaoSubCommand: ParsableCommand {
     
     static var configuration  = CommandConfiguration(
-        commandName: "selecao",
-        abstract: "",
-        discussion: ""
+        commandName: "selection",
+        abstract: "Select a drink to know more about",
+        discussion: """
+        Using the Brazudrink selection you can find drinks, get to know recipes, food combinations
+        and explore the brazilian regions! Are you thirsty for Brazil? 🇧🇷
+        """
     )
     
     @Argument(help: "Name of the drink")
